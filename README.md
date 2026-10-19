@@ -1,2 +1,12 @@
-# windgame-museum-app
-Mobile app made for Windgate Museum of Art for CSCI 352
+# Project Name
+Mobile app for Windgate Museum of Art
+
+## Team
+- Amiko Kozmanishvili
+- Vincent Twidwell
+- Mark Belmonte
+
+## Responsibilities
+- Amiko -> Unit Tester + Integration Tester
+- Mark -> Task Manager
+- Vincent -> Client Interfacer
