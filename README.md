@@ -42,3 +42,9 @@ I will also keep the tests up to date as the app changes, so the whole team can 
 
 I will be the client interfacer for this app. I feel confident in my ability to be the bridge between what the client want to happen and what we can do for them. A lot of my work in this role will be clarifying that everything we implement lives up to the clients vision while also being something feasible. Once we move past the design stage I will be working on the layout and implementing features, in tandem with other teammates.
 I will make sure that the app can do all of the things our client needs it to do and develop plans to work towards a good beta version that operates as intended. Beta test organization is a shared responsibility, but it is one that I will take seriously as to avoid stagnation. I also intend to be a motivational team member and encouraging of progress by communicating with my team often.
+
+
+### Mark
+
+I will be the Task Manager for this app. I know that my experiences in managing teams and sections in my extracurricular activities will allow me to efficiently and fairly manage the tasks for this team. My work will involve splitting up issues we create and encounter amongst each other, as well as differentiating current problems that need to be addressed and future problems that will be long-term goals. This is primarily what I will be doing after meeting with the client to steer our team in a direction that allows us to meet the client's goals and expectations.
+I will make sure that the workload for this project is distributed evenly amongst our team to avoid an unfair workload on my teammates. I will do my best to organize realistic goals for this project so that our team can focus on the important aspects of the prototype for this app. I will also be in communication with my teammates to make sure no one is silently struggling with any issue we make or encounter.
