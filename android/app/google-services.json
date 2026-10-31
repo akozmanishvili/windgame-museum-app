@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "338648086800",
+    "project_id": "windgate-museum-app-fb",
+    "storage_bucket": "windgate-museum-app-fb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:338648086800:android:df61704da2527e05954d95",
+        "android_client_info": {
+          "package_name": "com.example.windgate_museum_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiu6f-gEFGVsmoE65_uhfL6lxKjymkLeE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:338648086800:android:390369c6b281d634954d95",
+        "android_client_info": {
+          "package_name": "edu.hendrix.windgate_museum_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiu6f-gEFGVsmoE65_uhfL6lxKjymkLeE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
