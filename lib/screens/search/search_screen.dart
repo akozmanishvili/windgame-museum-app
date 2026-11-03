@@ -4,6 +4,8 @@ import '../../auth/app_user.dart';
 import '../../auth/auth_repository.dart';
 import '../../theme/app_theme.dart';
 import '../../widgets/windgate_logo.dart';
+import 'condition_report_screen.dart';
+import '../../widgets/primary_button.dart';
 
 /// Page 2: Search.
 class SearchScreen extends StatelessWidget {
@@ -27,6 +29,16 @@ class SearchScreen extends StatelessWidget {
       ScaffoldMessenger.of(context)
           .showSnackBar(SnackBar(content: Text(e.message)));
     }
+  }
+
+  void _openNewReport(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        builder: (_) => ConditionReportScreen(
+          examiner: user.greetingName,
+        ),
+      ),
+    );
   }
 
   @override
@@ -70,6 +82,11 @@ class SearchScreen extends StatelessWidget {
                   color: AppColors.mutedText,
                 ),
               ),
+              const SizedBox(height: 32),
+                PrimaryButton(
+                  label: 'NEW REPORT',
+                  onPressed: () => _openNewReport(context),
+                  ),
             ],
           ),
         ),
