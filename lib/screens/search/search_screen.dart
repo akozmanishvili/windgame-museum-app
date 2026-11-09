@@ -6,6 +6,7 @@ import '../../theme/app_theme.dart';
 import '../../widgets/windgate_logo.dart';
 import 'condition_report_screen.dart';
 import '../../widgets/primary_button.dart';
+import '../camera/camera_screen.dart';
 
 /// Page 2: Search.
 class SearchScreen extends StatelessWidget {
@@ -38,6 +39,15 @@ class SearchScreen extends StatelessWidget {
           examiner: user.greetingName,
         ),
       ),
+    );
+  }
+
+  void _openCamera(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        builder: (_) => CameraScreen(
+        examiner: user.greetingName),
+        ),
     );
   }
 
@@ -82,7 +92,13 @@ class SearchScreen extends StatelessWidget {
                   color: AppColors.mutedText,
                 ),
               ),
+              PrimaryButton(
+                label: 'SNAP PHOTO',
+                onPressed: () => _openCamera(context),
+              ),
+
               const SizedBox(height: 32),
+              
                 PrimaryButton(
                   label: 'NEW REPORT',
                   onPressed: () => _openNewReport(context),
