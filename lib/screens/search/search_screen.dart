@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-
 import '../../auth/app_user.dart';
 import '../../auth/auth_repository.dart';
 import '../../theme/app_theme.dart';
 import '../../widgets/windgate_logo.dart';
 import 'condition_report_screen.dart';
 import '../../widgets/primary_button.dart';
-import '../camera/camera_screen.dart';
 
 /// Page 2: Search.
 class SearchScreen extends StatelessWidget {
@@ -42,14 +40,6 @@ class SearchScreen extends StatelessWidget {
     );
   }
 
-  void _openCamera(BuildContext context) {
-    Navigator.of(context).push(
-      MaterialPageRoute<void>(
-        builder: (_) => CameraScreen(
-        examiner: user.greetingName),
-        ),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -91,10 +81,6 @@ class SearchScreen extends StatelessWidget {
                 style: textTheme.bodyMedium?.copyWith(
                   color: AppColors.mutedText,
                 ),
-              ),
-              PrimaryButton(
-                label: 'SNAP PHOTO',
-                onPressed: () => _openCamera(context),
               ),
 
               const SizedBox(height: 32),

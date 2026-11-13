@@ -24,8 +24,7 @@ import 'package:share_plus/share_plus.dart';
  
 import '../../theme/app_theme.dart';
 import '../../widgets/primary_button.dart';
- 
-
+import 'package:image_picker/image_picker.dart';
 /// Fill out a simple report and export it as a PDF.
 
 class ConditionReportScreen extends StatefulWidget {
@@ -87,6 +86,8 @@ class _ConditionReportScreenState extends State<ConditionReportScreen> {
   String? _condition;
   final Set<String> _issues = {};
   bool _isExporting = false;
+  File? _imageFile;
+  final ImagePicker _picker = ImagePicker();
  
   @override
   void dispose() {
@@ -100,6 +101,29 @@ class _ConditionReportScreenState extends State<ConditionReportScreen> {
   String get _today {
     final d = DateTime.now();
     return '${d.month}/${d.day}/${d.year}';
+  }
+
+  Future<void> _takePicture() async {
+    try {
+      final XFile? image = await _picker.pickImage(
+        source: ImageSource.camera,
+        imageQuality: 85,
+      );
+
+      if (image != null) {
+        setState(() {
+          _imageFile = File(image.path);
+        });
+      }
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Unable to access camera: $e'),
+          ),
+        );
+      }
+    }
   }
  
   Future<void> _exportPdf() async {
@@ -192,6 +216,8 @@ class _ConditionReportScreenState extends State<ConditionReportScreen> {
  
     return doc.save();
   }
+
+
  
   @override
   Widget build(BuildContext context) {
@@ -273,7 +299,26 @@ class _ConditionReportScreenState extends State<ConditionReportScreen> {
                 alignLabelWithHint: true,
               ),
             ),
-            const SizedBox(height: 28),
+            OutlinedButton.icon(
+                onPressed: _takePicture,
+                icon: const Icon(Icons.camera_alt),
+                label: const Text('TAKE PHOTO'),
+              ),
+
+              const SizedBox(height: 16),
+
+              if (_imageFile != null) ...[
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(4),
+                  child: Image.file(
+                    _imageFile!,
+                    height: 250,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                const SizedBox(height: 20),
+              ],
+
             // Save button. Later: add Firestore/Storage submit here.
             PrimaryButton(
               label: 'SAVE AS PDF',
