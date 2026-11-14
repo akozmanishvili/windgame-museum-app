@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
 
 import '../screens/auth/login_screen.dart';
-import '../screens/search/search_screen.dart';
+import '../reports/report_repository.dart';
+import '../screens/reports/reports_screen.dart';
 import '../widgets/windgate_logo.dart';
 import 'app_user.dart';
 import 'auth_repository.dart';
 
 class AuthGate extends StatefulWidget {
-  const AuthGate({super.key, required this.authRepository});
+  const AuthGate({
+    super.key,
+    required this.authRepository,
+    required this.reportRepository,
+  });
 
   final AuthRepository authRepository;
+  final ReportRepository reportRepository;
 
   @override
   State<AuthGate> createState() => _AuthGateState();
@@ -32,7 +38,11 @@ class _AuthGateState extends State<AuthGate> {
         if (user == null) {
           return LoginScreen(authRepository: widget.authRepository);
         }
-        return SearchScreen(authRepository: widget.authRepository, user: user);
+        return ReportsScreen(
+          authRepository: widget.authRepository,
+          reportRepository: widget.reportRepository,
+          user: user,
+        );
       },
     );
   }
