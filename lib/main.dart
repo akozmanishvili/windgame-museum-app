@@ -3,11 +3,17 @@ import 'package:flutter/material.dart';
 
 import 'app.dart';
 import 'auth/firebase_auth_repository.dart';
+import 'reports/firestore_report_repository.dart';
 
 import 'firebase_options.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  runApp(WindgateApp(authRepository: FirebaseAuthRepository()));
+  runApp(
+    WindgateApp(
+      authRepository: FirebaseAuthRepository(),
+      reportRepository: FirestoreReportRepository(),
+    ),
+  );
 }
